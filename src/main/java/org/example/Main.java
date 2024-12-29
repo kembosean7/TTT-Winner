@@ -24,7 +24,7 @@ public class Main {
             } else if (line[0].equals("O") && line[1].equals("O") && line[2].equals("O")) {
                 return "O";
             } else if (!(line[0].equals("O") || line[0].equals("X")) || !(line[1].equals("O") || line[1].equals("X")) || !(line[2].equals("O") || line[2].equals("X"))) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid character in board, Only 'X', 'O'");
             }
 
         }
