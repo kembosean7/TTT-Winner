@@ -7,7 +7,7 @@ public class Main {
     public String findWinner(String[][] board) throws IllegalArgumentException{
 
         if(board.length != 3 || board[0].length != 3 || board[1].length != 3 || board[2].length != 3){
-
+            throw new IllegalArgumentException("Board must be a 3x3 grid");
         }
 
         String[][] possibleWins = {
