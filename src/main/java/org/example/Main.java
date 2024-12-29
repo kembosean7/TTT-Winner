@@ -6,6 +6,9 @@ import java.util.Arrays;
 public class Main {
     public String findWinner(String[][] board) throws IllegalArgumentException{
 
+        if(board.length != 3 || board[0].length != 3 || board[1].length != 3 || board[2].length != 3){
+
+        }
 
         String[][] possibleWins = {
                 {board[0][0], board[0][1], board[0][2]},
@@ -34,7 +37,7 @@ public class Main {
 
         Main ttt = new Main();
         String[][] board = {
-                {"O", "O", "X"},
+                {"O", "O"},
                 {"O", "X", "O"},
                 {"X", "O", "X"}
         };
