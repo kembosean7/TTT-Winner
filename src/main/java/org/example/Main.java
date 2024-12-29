@@ -4,7 +4,7 @@ import java.util.Arrays;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public String findWinner(String[][] board){
+    public String findWinner(String[][] board) throws IllegalArgumentException{
 
 
         String[][] possibleWins = {
@@ -23,6 +23,8 @@ public class Main {
                 return "X";
             } else if (line[0].equals("O") && line[1].equals("O") && line[2].equals("O")) {
                 return "O";
+            } else if (!(line[0].equals("O") || line[0].equals("X")) || !(line[1].equals("O") || line[1].equals("X")) || !(line[2].equals("O") || line[2].equals("X"))) {
+                throw new IllegalArgumentException();
             }
 
         }
@@ -32,13 +34,13 @@ public class Main {
 
         Main ttt = new Main();
         String[][] board = {
-                {"P", "M", "X"},
+                {"O", "O", "X"},
                 {"O", "X", "O"},
-                {"X", "P", "X"}
+                {"X", "O", "X"}
         };
 
         String winner = ttt.findWinner(board);
-        System.out.println(winner);
+
         if (!(winner == null)){
             System.out.println("Winner: "+ winner);
         }
