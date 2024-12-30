@@ -86,4 +86,19 @@ public class testWinner {
 
     };
 
+    @Test
+    public void testInvalidBoardPLay(){
+
+        findWinner winner = new findWinner();
+        String[][] board = {
+                {"O", "X", "P"},
+                {"O", "Z", "X"},
+                {"X", "X", "O"}
+        };
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {winner.Winner(board);});
+        assertEquals("Invalid character in board, Only 'X', 'O'", exception.getMessage());
+
+    };
+
 };
