@@ -31,5 +31,18 @@ public class testWinner {
 
     };
 
+    @Test
+    public void testWinnerDia(){
 
-}
+        findWinner winner = new findWinner();
+        String[][] board = {
+                {"X", "O", "X"},
+                {"O", "X", "O"},
+                {"O", "X", "X"}
+        };
+        String output = winner.Winner(board);
+        assertEquals("X",output);
+    };
+
+
+};
