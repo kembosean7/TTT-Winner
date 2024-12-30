@@ -69,7 +69,21 @@ public class testWinner {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> { winner.Winner(board);});
         assertEquals("Board must be a 3x3 grid", exception.getMessage());
 
-    }
+    };
+    @Test
+    public void testInvalidBoard2(){
 
+        findWinner winner = new findWinner();
+        String[][] board = {
+                {"X", "O", "x",},
+                {"O", "O", "X"},
+                {"O", "X"}
+
+        };
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> { winner.Winner(board);});
+        assertEquals("Board must be a 3x3 grid", exception.getMessage());
+
+    };
 
 };
