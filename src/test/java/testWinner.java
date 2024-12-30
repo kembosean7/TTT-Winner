@@ -1,5 +1,5 @@
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.example.findWinner;
 import org.junit.Test;
 public class testWinner {
@@ -56,6 +56,20 @@ public class testWinner {
         String ouput = winner.Winner(board);
         assertEquals("O",ouput);
     };
+
+    @Test
+    public void testInvalidBoard(){
+
+        findWinner winner = new findWinner();
+        String[][] board = {
+                {"X", "O", "x",},
+                {"O", "O", "X"}
+        };
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> { winner.Winner(board);});
+        assertEquals("Board must be a 3x3 grid", exception.getMessage());
+
+    }
 
 
 };
