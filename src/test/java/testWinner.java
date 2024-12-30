@@ -18,5 +18,18 @@ public class testWinner {
         String output = winner.Winner(board);
         assertEquals("O", output);
     };
+    @Test
+    public void testWinnerRow(){
+        findWinner winner = new findWinner();
+        String[][] board = {
+                {"X", "X", "X"},
+                {"O", "O", "X"},
+                {"O", "O", "X"}
+        };
+        String output = winner.Winner(board);
+        assertEquals("X",output);
+
+    };
+
 
 }
